@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""model_state_fetch_all script"""
+"""model_state_fetch_first script"""
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from model_state import State, Base
@@ -24,9 +24,13 @@ def query_state():
 
     session = Session()
 
-    states = session.query(State).order_by(State.id)
-    for state in states:
+    state = session.query(State).order_by(State.id).first()
+
+    # for state in states:
+    if (state):
         print(f"{state.id}: {state.name}")
+    else:
+        print("Nothing")
 
     session.close()
 
