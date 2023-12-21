@@ -24,7 +24,7 @@ def query_state():
 
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    state = session.query(State).order_by(State.id.asc()).first()
 
     # for state in states:
     if (state):
