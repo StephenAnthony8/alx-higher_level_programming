@@ -9,7 +9,7 @@ import sys
 def query_state(session):
     states = session.query(State).order_by(State.id.asc())
     for state in states:
-        print(state.id, state.name)
+        print(f"{state.id}: {state.name}")
     ...
 
 
