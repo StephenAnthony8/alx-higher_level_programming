@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""model_state_fetch_all script"""
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine, select
 from model_state import State
