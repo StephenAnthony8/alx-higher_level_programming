@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """model-state script"""
 import sys
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import create_engine, Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-Base = declarative_base()
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 
 class State(Base):
