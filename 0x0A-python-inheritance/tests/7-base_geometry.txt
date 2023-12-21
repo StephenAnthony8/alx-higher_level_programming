@@ -1,0 +1,45 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg0 = BaseGeometry("smart")
+Traceback (most recent call last):
+TypeError: BaseGeometry() takes no arguments
+
+>>> bg1 = BaseGeometry()
+
+>>> bg1.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg1.area("one")
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg1.integer_validator("my_integer", 12)
+True
+
+>>> bg1.integer_validator("", 2555)
+True
+
+>>> bg1.integer_validator("yeet", "yeet")
+Traceback (most recent call last):
+TypeError: yeet must be an integer
+
+>>> bg1.integer_validator("zero", 0)
+Traceback (most recent call last):
+ValueError: zero must be greater than 0
+
+>>> bg1.integer_validator("neg_num", -5)
+Traceback (most recent call last):
+ValueError: neg_num must be greater than 0
+
+>>> bg1.integer_validator("float_num", 3.4)
+Traceback (most recent call last):
+TypeError: float_num must be an integer
+
+>>> bg1.integer_validator("many", 56, "args")
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg1.integer_validation()
+Traceback (most recent call last):
+AttributeError: 'BaseGeometry' object has no attribute 'integer_validation'

@@ -1,0 +1,12 @@
+1. Check the data type for all input and output parameters
+	- This includes also None
+2. Check the error types raised by incorrect input
+format:
+Traceback (most recent call last):
+        ...
+ErrorName: <error message>
+3. Check all output lines are correct with given test cases
+4. Check both errors and correct input scenarios work as intended
+5. Check for correct input and output results
+6. Check scenarios where function arguments are given
+
