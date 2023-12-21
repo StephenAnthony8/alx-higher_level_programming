@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 """model_state_fetch_all script"""
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine
 from model_state import State, Base
 import sys
 
 
 def query_state():
+    """Queries the number of states in State table"""
+    if (len(sys.argv) < 4):
+        return
+
     host = 'localhost'
     port = '3306'
     user = sys.argv[1]
@@ -16,11 +20,12 @@ def query_state():
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
     session = Session()
-    Base.metadata.create_all(engine)
 
     states = session.query(State).order_by(State.id)
     for state in states:
         print(f"{state.id}: {state.name}")
+
+    session.close()
 
 
 def main():
