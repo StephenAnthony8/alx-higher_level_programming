@@ -9,7 +9,7 @@ import sys
 def query_state():
     """Queries the number of states in State table"""
     if (len(sys.argv) < 4):
-        return
+        exit(1)
 
     host = 'localhost'
     port = '3306'
