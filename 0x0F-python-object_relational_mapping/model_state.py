@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """model-state script"""
 import sys
 from sqlalchemy import create_engine, Column, Integer, String
