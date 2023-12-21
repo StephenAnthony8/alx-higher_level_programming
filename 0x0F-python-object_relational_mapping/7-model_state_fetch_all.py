@@ -19,6 +19,9 @@ def query_state():
     db_url = f'mysql+mysqldb://{user}:{password}@{host}:{port}/{database}'
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
+
+    Base.metadata.create_all(engine)
+
     session = Session()
 
     states = session.query(State).order_by(State.id)
