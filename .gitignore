@@ -1,0 +1,17 @@
+# .swp files
+.*.sw*
+
+# pseudocode 
+pseudocode
+
+#a.out files
+*.out
+
+#__pycache__ dir
+*.pyc
+
+#main.py
+main.py
+
+#prototype files
+prototype
