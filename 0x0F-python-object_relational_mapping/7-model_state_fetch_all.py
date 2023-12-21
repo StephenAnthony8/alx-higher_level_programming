@@ -17,7 +17,7 @@ def query_state():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id.asc())
+    states = session.query(State).order_by(State.id)
     for state in states:
         print(f"{state.id}: {state.name}")
 
