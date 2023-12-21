@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""model_state_fetch_all script"""
+"""model_state_fetch_first script"""
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from model_state import State, Base
@@ -20,10 +20,12 @@ def query_state():
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
 
-
     session = Session()
 
-    states = session.query(State).order_by(State.id)
+    states = session.query(State).\
+        filter(State.name.like('%a%')).\
+        order_by(State.id.asc())
+
     for state in states:
         print(f"{state.id}: {state.name}")
 

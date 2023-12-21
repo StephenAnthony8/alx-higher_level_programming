@@ -20,13 +20,10 @@ def query_state():
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
 
-    # Base.metadata.create_all(engine)
-
     session = Session()
 
     state = session.query(State).order_by(State.id.asc()).first()
 
-    # for state in states:
     if (state):
         print(f"{state.id}: {state.name}")
     else:
