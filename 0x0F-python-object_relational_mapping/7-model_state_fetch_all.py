@@ -16,6 +16,7 @@ def query_state():
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
     session = Session()
+    Base.metadata.create_all(engine)
 
     states = session.query(State).order_by(State.id)
     for state in states:
