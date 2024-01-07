@@ -16,8 +16,6 @@ def main():
 
     print(f"{body}\n{b_type}\n{content}\n{b_utf}")
 
+
 if __name__ == """__main__""":
     main()
-
-
-
