@@ -5,6 +5,7 @@ peak - finds the peak in a list of unsorted integers
 
 
 def find_peak(list_of_integers):
+    """find_peak: finds the peak"""
     if not list_of_integers:
         return None
 
