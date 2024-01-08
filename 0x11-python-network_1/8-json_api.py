@@ -24,7 +24,7 @@ def main():
             print(f"[{id_no}] {name}")
 
     except requests.exceptions.JSONDecodeError:
-        print("No result")
+        print("Not a valid JSON")
 
 
 if __name__ == """__main__""":
