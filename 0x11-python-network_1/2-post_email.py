@@ -6,6 +6,8 @@ import sys
 
 
 def main():
+    """main: sends a POST request"""
+
     url, email_addr = sys.argv[1:]
 
     values = {'email': email_addr}
