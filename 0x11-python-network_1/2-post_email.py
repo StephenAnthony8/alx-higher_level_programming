@@ -12,11 +12,11 @@ def main():
 
     values = {'email': email_addr}
     data = urllib.parse.urlencode(values)
-    data = data.encode('utf-8')
+    data = data.encode('ascii')
     try:
         req = urllib.request.Request(url, data=data, method='POST')
         with urllib.request.urlopen(req) as response:
-            context = response.read().decode('ascii')
+            context = response.read().decode('utf-8')
         print(context)
     except ValueError:
         pass
