@@ -14,7 +14,7 @@ def main():
     data = urllib.parse.urlencode(values)
     data = data.encode('ascii')
     try:
-        req = urllib.request.Request(url, data=data, method='POST')
+        req = urllib.request.Request(url, data=data)  # method='POST')
         with urllib.request.urlopen(req) as response:
             context = response.read().decode('utf-8')
         print(context)
