@@ -8,7 +8,7 @@ def main():
     """fetches from 'site"""
     username, pwd = sys.argv[1:]
     url = f"http://api.github.com/users/{username}"
-    r = requests.get(url, auth=('username', 'pwd'))
+    r = requests.get(url, auth=(username, pwd))
 
     print(r.json().get('id'))
 
