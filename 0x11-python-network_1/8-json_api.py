@@ -14,8 +14,12 @@ def main():
         j_d = read_content.json()
 
         id_no, name = j_d.get('id'), j_d.get('name')
-        if None in [id_no, name]:
+        if len(j_d) < 1:
             print("No result")
+
+        elif None in [id_no, name]:
+            print("Not a valid JSON")
+
         else:
             print(f"[{id_no}] {name}")
 
