@@ -13,10 +13,13 @@ def main():
     values = {'email': email_addr}
     data = urllib.parse.urlencode(values)
     data = data.encode('utf-8')
-    req = urllib.request.Request(url, data=data, method='POST')
-    with urllib.request.urlopen(req) as response:
-        context = response.read().decode('ascii')
-    print(context)
+    try:
+        req = urllib.request.Request(url, data=data, method='POST')
+        with urllib.request.urlopen(req) as response:
+            context = response.read().decode('ascii')
+        print(context)
+    except ValueError:
+        pass
 
 
 if __name__ == "__main__":
